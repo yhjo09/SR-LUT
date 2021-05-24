@@ -34,38 +34,38 @@ cd ./1_Train_deep_model
 python Train_Model_S.py
 ```
 
-6. Checkpoints will saved in `./1_Train_deep_model/SR-LUT/checkpoint/S`.
+6. Checkpoints will be saved in `./1_Train_deep_model/SR-LUT/checkpoint/S`.
 
 
 
-## 2. Transferring to LUT [TODO]
+## 2. Transferring to LUT
+1. Modify user parameters in L11 in `./2_Transfer_to_LUT/Transfer_Model_S.py` to 
+- Specify a saved checkpoint in the step 1, or use attached `./2_Transfer_to_LUT/Model_S.pth`.
 
-2. Download pre-trained model and place it to `./model.pth`.
-- [NTIRE submission version](https://drive.google.com/file/d/10lu7rJ8JmiqGnq9k8N2iLei0aUAdhGcz/view?usp=sharing)
-- [Updated version](https://drive.google.com/file/d/1ugIYMCQK-Rw5jyI6CBB3e9ukMCceb7Lm/view?usp=sharing)
-
-3. Place low-resolution input images to `./input`.
-
-4. Run.
+2. Run.
 ```
-python test.py
+cd ./2_Transfer_to_LUT
+python Transfer_Model_S.py
 ```
 
-5. Check your results in `./output`.
+3. The resulting LUT will be saved like `./2_Transfer_to_LUT/Model_S_x4_4bit_int8.npy`.
 
 
 ## 3. Testing using LUT
 1. Modify user parameters in L18 in `./3_Test_using_LUT/Test_Model_S.py`.
-- Specify the generated LUT in the above step 2 or use included LUT.
+- Specify the generated LUT in the step 2, or use attached LUTs (npy files).
 
-2. Run.
+2. Set5 HR/LR test images are already included in `./3_Test_using_LUT/test`, or can use other images.
+
+3. Run.
 ```
 cd ./3_Test_using_LUT
 python Test_Model_S.py (or Test_Model_F.py or Test_Model_V.py)
 ```
 
-3. Reproduce the results of Table 6 in the paper.
-- Modify the variable `SAMPLING_INTERVAL` in L19 in Test_Model_S.py to range 3-8.
+4. Resulting images will be saved in `./output_S_x4_4bit/*.png`.
+
+5. We can reproduce the results of Table 6 in the paper, by modifying the variable `SAMPLING_INTERVAL` in L19 in Test_Model_S.py to range 3-8.
 
 
 
