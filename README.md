@@ -1,6 +1,6 @@
 ## Practical Single-Image Super-Resolution Using Look-Up Table
 
-[[Paper]]() 
+[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Jo_Practical_Single-Image_Super-Resolution_Using_Look-Up_Table_CVPR_2021_paper.html) 
 
 
 ## Dependency
