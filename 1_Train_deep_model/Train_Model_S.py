@@ -183,7 +183,6 @@ for i in tqdm(range(START_ITER+1, NB_ITER+1)):
     batch_S += ( torch.clamp(batch_S3,-1,1)*127 + torch.clamp(batch_S4,-1,1)*127 )
     batch_S /= 255.0
 
-    batch_S = batch_S1 + batch_S2 + batch_S3 + batch_S4
     loss_Pixel = torch.mean( ((batch_S - batch_H)**2)  )
     loss_G = loss_Pixel
 
@@ -251,8 +250,11 @@ for i in tqdm(range(START_ITER+1, NB_ITER+1)):
 
                 batch_S4 = model_G(F.pad(torch.rot90(val_L, 3, [2,3]), (0,1,0,1), mode='reflect'))
                 batch_S4 = torch.rot90(batch_S4, 1, [2,3])
+                
+                batch_S = ( torch.clamp(batch_S1,-1,1)*127 + torch.clamp(batch_S2,-1,1)*127 )
+                batch_S += ( torch.clamp(batch_S3,-1,1)*127 + torch.clamp(batch_S4,-1,1)*127 )
+                batch_S /= 255.0
 
-                batch_S = batch_S1 + batch_S2 + batch_S3 + batch_S4
 
                 # Output 
                 image_out = (batch_S).cpu().data.numpy()
