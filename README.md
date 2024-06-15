@@ -80,7 +80,7 @@ python Test_Model_V.py      # Ours-V
 
 
 ## 4. Testing on a smartphone
-1. Download [SR-LUT.apk](https://yonsei-my.sharepoint.com/:u:/g/personal/yh_jo_o365_yonsei_ac_kr/EWouYLlG7xlMu252RkLradAByJTJpHwhDYAd285bJSFzsA?e=BzZQLQ) and install it.
+1. Download [SR-LUT.apk](https://onedrive.live.com/?authkey=%21ADavaoa9Me4TeoU&cid=ADFCB6E1F3CE1167&id=ADFCB6E1F3CE1167%2137324&parId=ADFCB6E1F3CE1167%2137318&o=OneUp) and install it.
 
 2. You can test Set14 images or other images.
 
